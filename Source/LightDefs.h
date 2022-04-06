@@ -22,6 +22,7 @@
 
 #include <functional>
 #include <cassert>
+#include <cstdint>
 
 namespace RTGL1
 {

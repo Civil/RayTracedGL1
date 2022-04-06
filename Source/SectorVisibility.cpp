@@ -21,7 +21,7 @@
 #include "SectorVisibility.h"
 
 #include <cassert>
-#include <string>
+#include <cstring>
 
 #include "RgException.h"
 

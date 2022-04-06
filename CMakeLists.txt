@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(RayTracedGL1 CXX C)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 
 # Vulkan
 message(STATUS "Adding Vulkan. VulkanSDK: $ENV{VULKAN_SDK}")
@@ -161,21 +161,21 @@ set(Sources
 set(KTXSourceFolder Source/KTX/lib)
 
 set(KTXSources
-    ${KTXSourceFolder}"/texture.c"
-    ${KTXSourceFolder}"/texture1.c"
-    ${KTXSourceFolder}"/texture2.c"
-    ${KTXSourceFolder}"/hashlist.c"
-    ${KTXSourceFolder}"/checkheader.c"
-    ${KTXSourceFolder}"/swap.c"
-    ${KTXSourceFolder}"/memstream.c"
-    ${KTXSourceFolder}"/filestream.c"
-    ${KTXSourceFolder}"/vkloader.c"
-    ${KTXSourceFolder}"/vk_funcs.c"
-    ${KTXSourceFolder}"/basisu/zstd/zstd.c"
-    ${KTXSourceFolder}"/dfdutils/createdfd.c"
-    ${KTXSourceFolder}"/dfdutils/interpretdfd.c"
-    ${KTXSourceFolder}"/dfdutils/queries.c"
-    ${KTXSourceFolder}"/dfdutils/vk2dfd.c"
+    "${KTXSourceFolder}/texture.c"
+    "${KTXSourceFolder}/texture1.c"
+    "${KTXSourceFolder}/texture2.c"
+    "${KTXSourceFolder}/hashlist.c"
+    "${KTXSourceFolder}/checkheader.c"
+    "${KTXSourceFolder}/swap.c"
+    "${KTXSourceFolder}/memstream.c"
+    "${KTXSourceFolder}/filestream.c"
+    "${KTXSourceFolder}/vkloader.c"
+    "${KTXSourceFolder}/vk_funcs.c"
+    "${KTXSourceFolder}/basisu/zstd/zstd.c"
+    "${KTXSourceFolder}/dfdutils/createdfd.c"
+    "${KTXSourceFolder}/dfdutils/interpretdfd.c"
+    "${KTXSourceFolder}/dfdutils/queries.c"
+    "${KTXSourceFolder}/dfdutils/vk2dfd.c"
 )
 
 option(RG_WITH_EXPORTS          "Compile library for export"                ON)
@@ -257,7 +257,7 @@ if (RG_WITH_NVIDIA_DLSS)
         else()
             target_link_libraries(RayTracedGL1 PRIVATE "$ENV{DLSS_SDK_PATH}/lib/Linux_x86_64/libnvsdk_ngx.a")
             target_link_libraries(RayTracedGL1 PRIVATE ${CMAKE_DL_LIBS})
-            target_link_libraries(RayTracedGL1 PRIVATE libstdc++)
+	    #target_link_libraries(RayTracedGL1 PRIVATE libstdc++)
         endif()
     else()
         message(FATAL_ERROR 

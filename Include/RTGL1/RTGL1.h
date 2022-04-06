@@ -37,6 +37,8 @@
 
 #define RG_RTGL_VERSION_API "1.01.0000"
 
+#undef RG_USE_SURFACE_WIN32
+#define RG_USE_SURFACE_XLIB
 #ifdef RG_USE_SURFACE_WIN32
     #include <windows.h>
 #endif // RG_USE_SURFACE_WIN32
